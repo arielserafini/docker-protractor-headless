@@ -2,8 +2,7 @@ FROM node:slim
 WORKDIR /tmp
 COPY webdriver-versions.js ./
 ENV CHROME_PACKAGE="google-chrome-stable_current_amd64.deb" NODE_PATH=/usr/local/lib/node_modules
-RUN npm install -g protractor@4.0.14 mocha@3.2.0 jasmine@2.5.3 minimist@1.2.0 && \
-    node ./webdriver-versions.js --chromedriver 2.27 && \
+RUN npm install -g protractor@5 && \
     webdriver-manager update && \
     apt-get update && \
     apt-get install -y xvfb wget openjdk-7-jre && \
